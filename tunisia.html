@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Page 2</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="tunisia.css" />
 </head>
 <body>
   <h1>أدخل معلوماتك</h1>
@@ -14,5 +14,50 @@
 
   <!-- Link back to main page -->
   <a class="action" href="index.html">Back to Home</a>
+  <section class="booking-form">
+  <h2>أدخل معلوماتك</h2>
+  <form action="https://formspree.io/f/mpwdkapw" method="POST">
+    <input type="hidden" name="Tunisia" value="Page 2 Booking Form">
+
+    <label for="full-name">الاسم الكامل:</label>
+    <input type="text" id="full-name" name="الاسم الكامل" required>
+
+    <label for="phone">رقم الهاتف:</label>
+    <input type="tel" id="phone" name="رقم الهاتف" required>
+
+    <label for="wilaya">الولاية:</label>
+    <select id="wilaya" name="الولاية" required>
+      <option value="الجزائر">الجزائر</option>
+      <option value="البليدة">البليدة</option>
+      <option value="تيزي وزو">تيزي وزو</option>
+      <option value="بومرداس">بومرداس</option>
+      <option value="وهران">وهران</option>
+      <option value="الشلف">الشلف</option>
+      <option value="البويرة">البويرة</option>     
+      <option value="سطيف">سطيف</option>
+      <option value="سكيكدة">سكيكدة</option>
+      <option value="سيدي بلعباس">سيدي بلعباس</option>
+      <option value="عنابة">عنابة</option>
+      <option value="قالمة">قالمة</option>
+      <option value="قسنطينة">قسنطينة</option>
+      <option value="المدية">المدية</option>
+      <option value="مستغانم">مستغانم</option>  
+      <option value="برج بوعريريج">برج بوعريريج</option>
+      <option value="الطارف">الطارف</option>  
+      <option value="سوق أهراس">سوق أهراس</option>
+      <option value="تيبازة">تيبازة</option>
+      <option value="ميلة">ميلة</option>
+      <option value="عين الدفلى">عين الدفلى</option>
+      <option value="عين تموشنت">عين تموشنت</option>
+      <option value="غليزان">غليزان</option>
+    </select>
+
+    <label for="passengers">عدد المسافرين:</label>
+    <input type="number" id="passengers" name="عدد المسافرين" min="1" required>
+
+    <button type="submit">أحجز</button>
+  </form>
+</section>
+
 </body>
 </html>
