@@ -1,83 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>لوحة التحكم - Good Look DZ</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #fff; color: #333; padding: 20px; direction: rtl; }
-        input, textarea { width: 100%; padding: 8px; margin-bottom: 10px; }
-        button { padding: 10px 15px; background: #ff0000; color: #fff; border: none; cursor: pointer; }
-    </style>
-</head>
-<body>
-
-<h1>لوحة التحكم - إضافة المنتجات</h1>
-
-<label>إسم المنتج:</label>
-<input type="text" id="name">
-
-<label>رابط صورة المنتج:</label>
-<input type="text" id="image">
-
-<label>السعر (دج):</label>
-<input type="number" id="price">
-
-<label>الألوان (افصل بينهم بفاصلة , ):</label>
-<input type="text" id="colors">
-
-<label>الأحجام (افصل بينهم بفاصلة , ):</label>
-<input type="text" id="sizes">
-
-<button onclick="addProduct()">➕ إضافة المنتج</button>
-<button onclick="clearProducts()">🗑️ مسح كل المنتجات</button>
-
-<h2>المنتجات الحالية:</h2>
-<ul id="product-list"></ul>
-
-<script>
-function addProduct() {
-    const name = document.getElementById('name').value.trim();
-    const image = document.getElementById('image').value.trim();
-    const price = parseFloat(document.getElementById('price').value);
-    const colors = document.getElementById('colors').value.split(',').map(c => c.trim());
-    const sizes = document.getElementById('sizes').value.split(',').map(s => s.trim());
-
-    if (!name || !image || isNaN(price) || colors.length === 0 || sizes.length === 0) {
-        alert('يرجى ملء جميع الحقول بشكل صحيح');
-        return;
-    }
-
-    const product = { name, image, price, colors, sizes };
-
-    let products = JSON.parse(localStorage.getItem('products') || '[]');
-    products.push(product);
-    localStorage.setItem('products', JSON.stringify(products));
-
-    displayProducts();
-}
-
-function displayProducts() {
-    const products = JSON.parse(localStorage.getItem('products') || '[]');
-    const list = document.getElementById('product-list');
-    list.innerHTML = '';
-
-    products.forEach((product, index) => {
-        const li = document.createElement('li');
-        li.textContent = `${product.name} - ${product.price} دج - ألوان: [${product.colors.join(', ')}] - أحجام: [${product.sizes.join(', ')}]`;
-        list.appendChild(li);
-    });
-}
-
-function clearProducts() {
-    if (confirm('هل أنت متأكد أنك تريد مسح كل المنتجات؟')) {
-        localStorage.removeItem('products');
-        displayProducts();
-    }
-}
-
-displayProducts();
-</script>
-
-</body>
-</html>
