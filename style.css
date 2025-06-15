@@ -14,7 +14,6 @@ p {
   font-weight: bold;
   text-shadow: 2px 2px 0 #000, 4px 4px 0 #555;
 }
-@media (max-width: 768px) {
 .menu {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
