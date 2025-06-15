@@ -5,27 +5,26 @@ body {
   font-family: sans-serif;
 }
 
-
 p {
   text-align: center;
   font-size: 24px;
   margin-bottom: 20px;
-  color:white;
+  color: white;
   font-weight: bold;
   text-shadow: 2px 2px 0 #000, 4px 4px 0 #555;
 }
+
 .menu {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   padding: 40px;
-  background:rgb(196, 187, 187);
+  background: rgb(196, 187, 187);
   border: 2px solid #ccc;
   border-radius: 10px;
   max-width: 800px;
   width: 100%;
-  margin: 0 auto; /* center the menu */
-
+  margin: 0 auto;
 }
 
 .item {
@@ -39,7 +38,23 @@ p {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background: #fff;
   height: 300px;
+
+  /* Animation defaults */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
 }
+
+.item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.item:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
 h1 {
   font-weight: bold;
   text-align: center;
@@ -48,19 +63,21 @@ h1 {
   text-shadow: 2px 2px 0 #000, 4px 4px 0 #555;
 }
 
-
 .item h2 {
   text-align: center;
   margin: 10px 0;
+  text-decoration: underline;
 }
 
 .item img {
-  width: 240px;
-  height: 220px;
+  width: 100%;
+  height: auto;
+  max-width: 240px;
+  max-height: 220px;
   object-fit: cover;
   border-radius: 8px;
+  border: solid 2px black;
 }
-
 
 .item button {
   padding: 8px 16px;
@@ -71,23 +88,45 @@ h1 {
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s;
+  width: 100%; /* make button full width on small screens */
 }
 
 .item button:hover {
   background-color: #45a049;
 }
-img{
-    border: solid 2px black;
-}
 
-h2{
-    text-decoration: underline;
-}
-section, .logo{
+section, .logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  border:#fff;
+  border: #fff;
   opacity: 0.9;
   border-radius: 50%;
+  max-width: 200px;
+  margin: 0 auto 20px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+/* ✅ NEW: Make grid stack on small screens */
+@media (max-width: 768px) {
+  .menu {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .item {
+    height: auto; /* allow height to grow naturally */
+  }
 }
