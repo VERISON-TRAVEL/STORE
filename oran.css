@@ -49,6 +49,8 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
+    font-size: 100px;
 }
 option, label{
     font-weight: bold;
@@ -63,4 +65,15 @@ button{
   font-size: larger;
   font-weight: bold;
 
+}
+.action{
+  display:block;
+  text-align: left;
+  justify-items: left;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.action .programe{
+  display:inline-block
 }
