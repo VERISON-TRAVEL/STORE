@@ -74,5 +74,19 @@
     <button type="submit">أحجز</button>
   </form>
 </section>
+  <script>
+  // Get the form
+  const oranForm = document.getElementById("oranForm");
+
+  // Check localStorage to see if the user already submitted
+  if (localStorage.getItem("oranSubmitted")) {
+    oranForm.innerHTML = "<p style='color: green; font-weight: bold; font-size:40px;'>لقد تم تسجيل طلبك بنجاح,سيتصل بك فريقنا لإتباع الإجراءات, شكرا لك!</p>";
+  }
+
+  // On submit, store a flag
+  oranForm.addEventListener("submit", function() {
+    localStorage.setItem("oranSubmitted", "true");
+  });
+</script>
 </body>
 </html>
