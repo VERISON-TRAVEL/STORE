@@ -1,0 +1,95 @@
+body{
+      margin: 0;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  background-repeat: no-repeat;  /* don’t repeat */
+  background-size: cover;        /* fill whole area */
+  background-position: center;   /* center the image */
+  background-attachment: fixed;
+
+}
+.booking-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fd5f03ce;
+  direction: rtl;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+.booking-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.booking-form label {
+  display: block;
+  margin: 10px 0 5px;
+  
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.booking-form button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background-color: #5a2ca0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.booking-form button:hover {
+  background-color: #421e78;
+}
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 100px;
+    background-color: #843af3e8;
+    
+}
+.programe{
+  display:block;
+  text-align: right;
+  justify-items: right;
+  font-size: larger;
+  font-weight: bold;
+
+}
+.action{
+  display:block;
+  text-align: left;
+  justify-items: left;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between; /* puts one link left, one right */
+  align-items: center;            /* optional: vertical alignment */
+  padding: 0 20px;                /* optional: horizontal spacing */
+}
+
+.links a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #3300ff; /* or your preferred color */
+}

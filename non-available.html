@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VERISON TRAVEL</title>
+  <link rel="stylesheet" href="non-available.css" />
+  <style>
+    /* Flashing price style */
+    h2 {
+      font-size: 2rem;
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+      animation: flash 1s infinite;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    @keyframes flash {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .not-available {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-top: 60px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>VERISON TRAVEL</h1>
+
+  <!-- PRICE -->
+
+  <!-- LINKS: one left, one right -->
+  <div class="links">
+    <a class="action" href="index.html">الصفحة الرئيسية</a>
+  </div>
+
+  <!-- Not available message instead of form -->
+  <section class="booking-form">
+    <h2 class="not-available">هذه الرحلة غير متاحة حالياً</h2>
+  </section>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HAMMAMET BUS</title>
+  <link rel="stylesheet" href="hammamet-bus.css" />
+</head>
+<body>
+  <h1>HAMMAMET</h1>
+  <!-- Link back to main page -->
+  <a class="action" href="index.html">الصفحة الرئيسية</a><a class="programe" href="https://www.facebook.com/share/v/1Btrwn2948/">البرنامج</a>
+
+  <section class="booking-form">
+  <h2>أدخل معلوماتك</h2>
+  <form id="oranForm" action="https://formspree.io/f/mpwdkapw" method="POST">
+    <input type="hidden" name="Destination:" value="HAMMAMET">
+
+    <label for="full-name">الاسم الكامل:</label>
+    <input type="text" id="full-name" name="الاسم الكامل" required>
+
+    <label for="phone">رقم الهاتف:</label>
+    <input type="tel" id="phone" name="رقم الهاتف" required>
+
+    <label for="wilaya de depart">ولاية الإنطلاق:</label>
+   <select name="wilaya" required>
+  <option value="Algiers" selected>الجزائر</option>
+  <option value="Bouira">البويرة - محطة الحافلات</option>
+  <option value="Bordj Bou Arreridj">برج بوعريريج - الياشير</option>
+  <option value="Sétif">سطيف - محطة بنزين البابور</option>
+  <option value="Mila">ميلة - محطة بنزين ميلاف</option>
+  <option value="Skikda">سكيكدة - محطة بنزين روسيكادا</option>
+  <option value="Constantine">قسنطينة - محطة بنزين سيترا</option>
+  <option value="El Tarf">الطارف</option>
+
+</select>
+
+
+    <label for="passengers">عدد المسافرين:</label>
+    <input type="number" id="passengers" name="عدد المسافرين" min="1" required>
+
+
+    <label for="departur date">إختر تاريخ الرحلة:</label>
+<select name="departur date" required> 
+  <option value="19-06-2025">19-06-2025</option>
+  <option value="26-06-2025">26-06-2025</option>
+</select>    
+
+    <button type="submit">أحجز</button>
+  </form>
+</section>
+
+</body>
+</html>

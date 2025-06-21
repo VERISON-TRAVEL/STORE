@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HAMMAMET AVION</title>
+  <link rel="stylesheet" href="hammamet-avion.css" />
+</head>
+<body>
+  <h1>HAMMAMET</h1>
+  <!-- Link back to main page -->
+  <a class="action" href="index.html">الصفحة الرئيسية</a><a class="programe" href="https://www.facebook.com/share/v/1Btrwn2948/">البرنامج</a>
+
+  <section class="booking-form">
+  <h2>أدخل معلوماتك</h2>
+  <form id="HammametForm" action="https://formspree.io/f/mpwdkapw" method="POST">
+    <input type="hidden" name="Destination:" value="HAMMAMET-AVION">
+
+    <label for="full-name">الاسم الكامل:</label>
+    <input type="text" id="full-name" name="الاسم الكامل" required>
+
+    <label for="phone">رقم الهاتف:</label>
+    <input type="tel" id="phone" name="رقم الهاتف" required>
+
+    <label for="wilaya de depart">ولاية الإنطلاق:</label>
+   <select name="wilaya" required>
+  <option value="Algiers" selected> الجزائر - مطار هواري بومدين</option>
+</select>
+
+
+    <label for="passengers">عدد المسافرين:</label>
+    <input type="number" id="passengers" name="عدد المسافرين" min="1" required>
+
+
+    <label for="departur date">إختر تاريخ الرحلة:</label>
+<select name="departur date" required> 
+  <option value="19-06-2025">00-00-2025</option>
+  <option value="26-06-2025">00-00-2025</option>
+</select>    
+
+    <button type="submit">أحجز</button>
+  </form>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  font-family: sans-serif;
+   background-image: url('background2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+
+  }
+p {
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  background: #750dec;
+}
+
+
+.menu  {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 40px;
+  background: rgba(204, 80, 249, 0.577);
+  border: 2px solid #cccccc;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #ffffffc7;
+  height: 300px;
+
+  /* Animation defaults */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+}
+
+.item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.item:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 50px;
+  color: #fb520f;
+  text-shadow: 2px 2px 0 #000, 4px 4px 0 #555;
+}
+
+.item h2 {
+  text-align: center;
+  margin: 10px 0;
+  text-decoration: underline;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  max-width: 240px;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: solid 2px black;
+  aspect-ratio: 4 / 3; /* for example: width:height = 4:3 */
+}
+
+.item button {
+  padding: 8px 16px;
+  font-size: 25px;
+  cursor: pointer;
+  font-family: arial;
+  background-color: #750dec;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  width: 100%; /* make button full width on small screens */
+}
+
+.item button:hover {
+  background-color: #45a049;
+}
+
+section, .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: #fff;
+  opacity: 0.9;
+  border-radius: 3%;
+  max-width: 200px;
+  margin: 0 auto 20px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+/* ✅ NEW: Make grid stack on small screens */
+@media (max-width: 768px) {
+  .menu {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .item {
+    height: auto; /* allow height to grow naturally */
+  }
+}
+h3 {
+  background-color: purple;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 25px;
+}
+
+.center {
+  text-align: center;
+}
+
