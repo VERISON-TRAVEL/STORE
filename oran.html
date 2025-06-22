@@ -45,7 +45,8 @@
     <input type="text" id="full-name" name="الاسم الكامل" required>
 
     <label for="phone">رقم الهاتف:</label>
-    <input type="tel" id="phone" name="رقم الهاتف" required>
+    <input type="tel" id="phone" name="رقم الهاتف" pattern="[0-9]{10}"
+       maxlength="10" minlength="10" required>
 
     <label for="wilaya">ولاية الإنطلاق:</label>
    <select name="wilaya" required>
