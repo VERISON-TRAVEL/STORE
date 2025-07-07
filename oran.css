@@ -51,6 +51,7 @@ h1{
     justify-content: center;
     font-weight: bold;
     font-size: 100px;
+    background-color: #5a2ca0df;
 }
 option, label{
     font-weight: bold;
@@ -92,4 +93,63 @@ body{
   background-size: cover;        /* fill whole area */
   background-position: center;   /* center the image */
   background-attachment: fixed;
+}
+
+/* ===== Footer Styles ===== */
+.site-footer {
+  background: #5a2ca0; /* Violet background */
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.site-footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-footer .contact-info p {
+  margin: 5px 0;
+}
+
+.site-footer .social-links {
+  margin-top: 20px;
+}
+
+.site-footer .social-links a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  font-size: 18px;
+}
+
+.site-footer .social-links a i {
+  margin-right: 8px; /* Space between icon & text */
+}
+
+.site-footer .social-links a:hover {
+  color: #ffd700; /* Gold on hover */
+}
+
+.site-footer p {
+  margin: 15px 0 0;
+}
+
+@media (min-width: 600px) {
+  .site-footer .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .site-footer .contact-info,
+  .site-footer .social-links {
+    flex: 1;
+  }
 }
