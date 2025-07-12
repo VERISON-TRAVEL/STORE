@@ -45,6 +45,15 @@ h1 {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* répartit bien le contenu */
+  max-height: 420px;              /* limite la hauteur totale */
+  height: auto;
+
+  /* ✅ Empêche l’étirement */
+  max-height: 400px;
+  height: auto;
 }
 
 .item:hover {
