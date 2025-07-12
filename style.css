@@ -1,102 +1,123 @@
 body {
   margin: 0;
-  padding: 20px;
-  background-color: rgb(255, 255, 255);
-  font-family: sans-serif;
-  background-image: url(background.jpg); /* your image path */
-  background-repeat: no-repeat;  /* don’t repeat */
-  background-size: cover;        /* fill whole area */
-  background-position: center;   /* center the image */
+  padding: 0;
+  background-image: url("background.jpg"); /* 👉 adapte le nom si besoin */
+  background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: center center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
 
-  }
 
+h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px #fb520f, 0 0 20px #fb520f;
+  margin-top: 20px;
+  font-size: 3rem;
+}
 
-
-.menu  {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 40px;
-  background: rgba(204, 80, 249, 0.577);
-  border: 2px solid #cccccc;
-  border-radius: 10px;
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px;
+  gap: 30px;
+  margin-bottom: 80px; /* 👈 AJOUTÉ pour dégager le footer */
 }
 
 .item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background: #ffffffc7;
-  height: 300px;
-
-  /* Animation defaults */
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease-out;
-}
-
-.item.show {
-  opacity: 1;
-  transform: translateY(0);
+  background-color: white;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .item:hover {
   transform: scale(1.05);
-  transition: transform 0.3s;
-}
-
-h1 {
-  font-weight: bold;
-  text-align: center;
-  font-size: 50px;
-  color: #fb520f;
-  text-shadow: 2px 2px 0 #000, 4px 4px 0 #555;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .item h2 {
-  text-align: center;
-  margin: 10px 0;
-  text-decoration: underline;
+  color: #6A1B9A;
+  margin: 15px 0 10px;
 }
 
 .item img {
-  width: 100%;
-  height: auto;
-  max-width: 240px;
-  max-height: 220px;
+  width: 320px;
+  height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  border: solid 2px black;
-  aspect-ratio: 4 / 3; /* for example: width:height = 4:3 */
+  display: block;
+  margin: 0 auto;
 }
 
 .item button {
-  padding: 8px 16px;
-  font-size: 25px;
-  cursor: pointer;
-  font-family: arial;
-  background-color: #750dec;
-  color: white;
+  background-color: #fb520f;
   border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  width: 100%; /* make button full width on small screens */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .item button:hover {
-  background-color: #45a049;
+  background-color: #d33c0c;
 }
 
-section, .logo {
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #6A1B9A;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  z-index: 1000;
+}
+
+
+@media screen and (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item {
+    width: 90%;
+  }
+
+  .item img {
+    width: 100%;
+  }
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.spacer {
+  height: 60px; /* même hauteur que ton footer */
+}
+
+.logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,100 +126,15 @@ section, .logo {
   border-radius: 3%;
   max-width: 200px;
   margin: 0 auto 20px;
-}
 
-.logo {
-  width: 100%;
-  height: auto;
-}
-
-/* ✅ NEW: Make grid stack on small screens */
-@media (max-width: 768px) {
-  .menu {
-    grid-template-columns: 1fr;
-    padding: 20px;
   }
-
-  h1 {
-    font-size: 36px;
-  }
-
-  p {
-    font-size: 20px;
-  }
-
-  .item {
-    height: auto; /* allow height to grow naturally */
-  }
-}
-h3 {
-  background-color: purple;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  display: inline-block;
-  font-size: 25px;
-}
-
-.center {
-  text-align: center;
-}
-
-/* ===== Footer Styles ===== */
-.site-footer {
-  background: #5a2ca0; /* Violet background */
-  color: #fff;
-  padding: 40px 20px;
-  text-align: center;
-  font-family: 'Arial', sans-serif;
-}
-
-.site-footer .footer-content {
-  display: flex;
-  flex-direction: column;
+  .id{
+     display: inline-flex;
   align-items: center;
-}
-
-.site-footer .contact-info p {
-  margin: 5px 0;
-}
-
-.site-footer .social-links {
-  margin-top: 20px;
-}
-
-.site-footer .social-links a {
-  margin: 0 10px;
-  color: #fff;
-  text-decoration: none;
+  justify-content: center;
+  margin-right: 20px;
   font-weight: bold;
-  transition: color 0.3s ease;
-  font-size: 18px;
-}
-
-.site-footer .social-links a i {
-  margin-right: 8px; /* Space between icon & text */
-}
-
-.site-footer .social-links a:hover {
-  color: #ffd700; /* Gold on hover */
-}
-
-.site-footer p {
-  margin: 15px 0 0;
-}
-
-@media (min-width: 600px) {
-  .site-footer .footer-content {
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: left;
   }
-
-  .site-footer .contact-info,
-  .site-footer .social-links {
-    flex: 1;
+  .rights{
+    font-weight: bold;
   }
-}
