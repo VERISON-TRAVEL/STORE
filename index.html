@@ -54,33 +54,5 @@
   <p class="rights">&copy; 2025 VERISON TRAVEL - Tous droits réservés</p>
 </footer>
 </div>
-  <script>
-fetch("https://raw.githubusercontent.com/VERISON-TRAVEL/STORE/main/departures.json")
-  .then(res => res.json())
-  .then(data => {
-    const oranData = data["ORAN"];
-    if (!oranData) return;
-
-    // Met à jour le prix
-    const priceEl = document.querySelector(".flashing-price");
-    if (priceEl) priceEl.innerText = "السعر: " + oranData.price;
-
-    // Met à jour les dates
-    const selectEl = document.querySelector('select[name="departur date"]');
-    if (selectEl) {
-      selectEl.innerHTML = ""; // Vide les anciennes options
-      oranData.dates.forEach(date => {
-        const opt = document.createElement("option");
-        opt.value = date;
-        opt.innerText = date;
-        selectEl.appendChild(opt);
-      });
-    }
-  })
-  .catch(err => {
-    console.error("Erreur de chargement des données JSON", err);
-  });
-</script>
-
 </body>
 </html>
