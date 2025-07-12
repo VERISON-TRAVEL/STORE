@@ -1,16 +1,23 @@
-body {
+/* Reset & layout de base */
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  background-image: url("background.jpg"); /* 👉 adapte le nom si besoin */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
+}
+
+body {
+  background-color: rgb(229, 48, 229);
   font-family: 'Segoe UI', sans-serif;
   color: #333;
 }
 
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
+/* Titre */
 h1 {
   text-align: center;
   color: white;
@@ -19,15 +26,17 @@ h1 {
   font-size: 3rem;
 }
 
+/* Menu principal */
 .menu {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 30px;
   gap: 30px;
-  margin-bottom: 80px; /* 👈 AJOUTÉ pour dégager le footer */
+  padding: 30px;
+  flex: 1; /* 👈 pousse le footer en bas si peu de contenu */
 }
 
+/* Carte destination */
 .item {
   background-color: white;
   border-radius: 12px;
@@ -57,12 +66,12 @@ h1 {
   margin: 0 auto;
 }
 
+/* Boutons */
 .item button {
   background-color: #fb520f;
   border: none;
   color: white;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 1rem;
   padding: 10px 20px;
   margin: 15px;
   border-radius: 25px;
@@ -74,19 +83,16 @@ h1 {
   background-color: #d33c0c;
 }
 
+/* Footer normal (non fixé) */
 footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
   background: #6A1B9A;
   color: white;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
   font-size: 0.9rem;
-  z-index: 1000;
 }
 
-
+/* Responsive */
 @media screen and (max-width: 768px) {
   .menu {
     flex-direction: column;
@@ -99,23 +105,11 @@ footer {
 
   .item img {
     width: 100%;
+    height: 200px;
   }
 }
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
-.spacer {
-  height: 60px; /* même hauteur que ton footer */
-}
 
 .logo {
   display: flex;
