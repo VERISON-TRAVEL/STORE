@@ -89,7 +89,7 @@ button{
   color: #fdfdfc; /* or your preferred color */
 }
 body{
-  background-image: url(LANDSCAPE.jpg);
+  background-image: url(ORAN.jpg);
   background-repeat: no-repeat;  /* don’t repeat */
   background-size: cover;        /* fill whole area */
   background-position: center;   /* center the image */
