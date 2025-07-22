@@ -81,11 +81,12 @@ button{
   align-items: center;            /* optional: vertical alignment */
   padding: 0 20px;                /* optional: horizontal spacing */
 }
-
+button{
+  background-color: rgb(71, 1, 73)}
 .links a {
   text-decoration: none;
   font-weight: bold;
-  color: #fcf802; /* or your preferred color */
+  color: #fdfdfc; /* or your preferred color */
 }
 body{
   background-image: url(ORAN.jpg);
