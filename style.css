@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-  background-image: url(ORAN.jpg);
+  background-image: url(LANDSCAPE.jpg);
   background-repeat: no-repeat;  /* don’t repeat */
   background-size: cover;        /* fill whole area */
   background-position: center;   /* center the image */
