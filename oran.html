@@ -54,18 +54,32 @@
     <input type="number" id="passengers" name="عدد المسافرين" min="1" required>
 
 
-    <label for="departur date">إختر تاريخ الرحلة:</label>
-<select name="departur date" required> 
-  <option value="31-07-2025">"3 Nuits"--31-07-2025 </option>
-  <option value="03-08-2025">"4 Nuits"--03-08-2025 </option>
-  <option value="07-08-2025">"3 Nuits"--07-08-2025 </option>
-  <option value="10-08-2025">"4 Nuits"--10-08-2025 </option>
-  <option value="14-08-2025">"3 Nuits"--14-08-2025 </option>
-  <option value="17-08-2025">"4 Nuits"--17-08-2025 </option>
-  <option value="21-08-2025">"3 Nuits"--21-08-2025 </option>
-  <option value="24-08-2025">"4 Nuits"--24-08-2025 </option>
-  <option value="28-08-2025">"3 Nuits"--28-08-2025 </option>
-</select>    
+<label for="departureDate">إختر تاريخ الرحلة:</label>
+<select id="departureDate" name="departureDate" required onchange="showNights()">
+  <option value="">-- اختر تاريخ الرحلة --</option>
+  <option value="31-07-2025" data-nights="3">31-07-2025</option>
+  <option value="03-08-2025" data-nights="4">03-08-2025</option>
+  <option value="07-08-2025" data-nights="3">07-08-2025</option>
+  <option value="10-08-2025" data-nights="4">10-08-2025</option>
+  <option value="14-08-2025" data-nights="3">14-08-2025</option>
+  <option value="17-08-2025" data-nights="4">17-08-2025</option>
+  <option value="21-08-2025" data-nights="3">21-08-2025</option>
+  <option value="24-08-2025" data-nights="4">24-08-2025</option>
+  <option value="28-08-2025" data-nights="3">28-08-2025</option>
+</select>
+
+<span id="nightsInfo" style="margin-right:10px; font-weight:bold; color:#800080;"></span>
+
+<script>
+function showNights() {
+    const select = document.getElementById("departureDate");
+    const selectedOption = select.options[select.selectedIndex];
+    const nights = selectedOption.getAttribute("data-nights");
+
+    document.getElementById("nightsInfo").textContent = nights ? nights + " ليالٍ" : "";
+}
+</script>
+  
 
     <button type="submit">أحجز</button>
   </form>
