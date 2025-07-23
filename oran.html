@@ -71,31 +71,21 @@
     <button type="submit">أحجز</button>
   </form>
 </section>
-  <script>
-    let bookingDone = false;
+ <script>
+  // Get the form
+  const oranForm = document.getElementById("oranForm");
 
-    function handleBooking(event) {
-      if (bookingDone) {
-        event.preventDefault();
-        return false;
-      }
+  // Check localStorage to see if the user already submitted
+  if (localStorage.getItem("oranSubmitted")) {
+    oranForm.innerHTML = "<p style='color: green; font-weight: bold; font-size:40px;'>لقد تم تسجيل طلبك بنجاح,سيتصل بك فريقنا لإتباع الإجراءات, شكرا لك!</p>";
+  }
 
-      const fullName = document.getElementById('full-name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const passengers = document.getElementById('passengers').value.trim();
-      const date = document.getElementById('departureDate').value;
+  // On submit, store a flag
+  oranForm.addEventListener("submit", function() {
+    localStorage.setItem("oranSubmitted", "true");
+  });
+</script>
 
-      if (fullName && phone && passengers && date) {
-        alert("لقد تم تسجيل طلبك بنجاح سيتصل بك عملائنا لإتباع الإجراءات");
-        bookingDone = true;
-        return true; // allows Formspree to send the form
-      } else {
-        alert("يرجى ملء جميع الحقول.");
-        event.preventDefault();
-        return false;
-      }
-    }
-  </script>
 </body>
 <!-- ✅ Footer with icons -->
 <footer class="site-footer">
