@@ -39,7 +39,7 @@
   </div>
   <section class="booking-form">
   <h2>أدخل معلوماتك</h2>
-  <form id="oranForm" action="https://formspree.io/f/mpwdkapw" method="POST">
+  <form id="oranForm" action="https://formspree.io/f/xblyyywv" method="POST">
     <input type="hidden" name="oran" value="ORAN">
 
     <label for="full-name">الاسم الكامل:</label>
@@ -68,12 +68,34 @@
   <option value="28-08-2025 إلى 31-08-2025">من 28-08-2025 إلى 31-08-2025 (3 ليالٍ)</option>
 </select>
 
-
-  
-
     <button type="submit">أحجز</button>
   </form>
 </section>
+  <script>
+    let bookingDone = false;
+
+    function handleBooking(event) {
+      if (bookingDone) {
+        event.preventDefault();
+        return false;
+      }
+
+      const fullName = document.getElementById('full-name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const passengers = document.getElementById('passengers').value.trim();
+      const date = document.getElementById('departureDate').value;
+
+      if (fullName && phone && passengers && date) {
+        alert("لقد تم تسجيل طلبك بنجاح سيتصل بك عملائنا لإتباع الإجراءات");
+        bookingDone = true;
+        return true; // allows Formspree to send the form
+      } else {
+        alert("يرجى ملء جميع الحقول.");
+        event.preventDefault();
+        return false;
+      }
+    }
+  </script>
 </body>
 <!-- ✅ Footer with icons -->
 <footer class="site-footer">
